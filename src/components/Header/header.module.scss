@@ -1,0 +1,40 @@
+@import "../../scss/color.scss";
+
+.link {
+    background-color: $background-header;
+    color: $text-color-default;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 18px;
+
+    &:hover {
+        background-color: $background-header-hover;
+        color: $primary;
+    }
+}
+
+#avata {
+    position: absolute;
+    top: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 90px;
+    width: 90px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 1px 1px 15px 1px #000;
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    #avata {
+        height: 60px;
+        width: 60px;
+    }
+}

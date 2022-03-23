@@ -1,0 +1,31 @@
+@use "sass:color";
+@import "../../scss/color.scss";
+
+.post {
+    border-bottom: 1px solid color.adjust($primary, $alpha: -0.7);
+    margin-bottom: 30px;
+
+    h2 {
+        color: $primary;
+        font-size: 40px;
+        font-weight: 900;
+        margin: 12px 0;
+    }
+
+    a {
+        text-decoration: none;
+
+        h2:hover {
+            color: $primary-hover;
+        }
+    }
+
+    .tag {
+        display: inline-block;
+        margin-bottom: 8px;
+    }
+
+    .tag + .tag {
+        margin-left: 10px;
+    }
+}
