@@ -30,4 +30,3 @@ jobs:
           repository-name:  compsec-hcmus/compsec-hcmus.github.io
           branch: main
           folder: build
-          single-commit: true # not maintain history
