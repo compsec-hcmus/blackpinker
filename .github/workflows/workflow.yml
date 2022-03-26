@@ -21,7 +21,13 @@ jobs:
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4.2.5
         with:
-          token: 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
+          token: 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\
+          # TODO: use more secure way to save token https://docs.github.com/en/actions/security-guides/encrypted-secrets
+          # but this repository is set to private now
+          # and the PAT is set to only access public repository
+          # so it is not very emergency 
+
           repository-name:  compsec-hcmus/compsec-hcmus.github.io
-          branch: gh-pages
+          branch: main
           folder: build
+          single-commit: true # not maintain history
