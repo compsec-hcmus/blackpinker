@@ -28,5 +28,6 @@ jobs:
           # so it is not very emergency 
 
           repository-name:  compsec-hcmus/compsec-hcmus.github.io
-          branch: main
+          branch: gh-pages
           folder: build
+          single-commit: true # not maintain history
