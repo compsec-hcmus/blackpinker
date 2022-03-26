@@ -21,6 +21,7 @@ jobs:
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4.2.5
         with:
+          token: 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
           repository-name:  compsec-hcmus/compsec-hcmus.github.io
           branch: gh-pages
           folder: build
