@@ -1,0 +1,28 @@
+@import "../../scss/color.scss";
+
+.footer {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+
+    .scrollButton {
+        display: none;
+        color: $primary;
+        cursor: pointer;
+
+        &:hover {
+            color: $primary-hover;
+        }
+
+        &.show {
+            display: block;
+        }
+
+        svg {
+            background-color: $background-body;
+            border-radius: 50%;
+            width: 42px;
+            height: 42px;
+        }
+    }
+}

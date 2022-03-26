@@ -1,14 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit'
-import challengeSlice from './challengeSlice'
+import postReducer from './postSlice'
+import axios from 'axios';
 
-import getDirList from '../utils/listDir';
-import readmeContent from '../utils/readmeContent';
-import { getTagFromMd, rmTagFromMd } from '../utils/processTagfromMd';
-import { updateChallenges, updateChallengeItem } from './challengeSlice';
+import { updatePost } from './postSlice';
 
 const store = configureStore({
   reducer: {
-    challenges: challengeSlice,
+    post: postReducer,
   },
 })
 
@@ -16,16 +14,5 @@ export default store;
 export type RootState = ReturnType<typeof store.getState>
 export type AppDispatch = typeof store.dispatch
 
-// load data from api on load
-getDirList().then(async res => {
-  store.dispatch(updateChallenges(res))
-
-  res.forEach(async (item, index) => {
-
-    const readme = await readmeContent(item.url);
-
-    const tag = getTagFromMd(readme);
-
-    store.dispatch(updateChallengeItem({ item: { ...item, readme: rmTagFromMd(readme), tag: tag ? tag : [] }, index }))
-  })
-})
+// load data from remote
+axios.get(process.env.REACT_APP_SRC_JSON as string).then(res => store.dispatch(updatePost(res.data)))

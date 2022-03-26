@@ -7,6 +7,7 @@ import store from './redux/store'
 import './scss/index.scss';
 import './scss/common.scss';
 import './scss/github-markdown.scss';
+import './scss/highlightjs.scss';
 
 import reportWebVitals from './reportWebVitals';
 
@@ -14,7 +15,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Home from './pages/Home';
 import About from './pages/About';
-import PostPage from './pages/PostPage';
+
 
 ReactDOM.render(
   <React.StrictMode>
@@ -22,10 +23,8 @@ ReactDOM.render(
       <BrowserRouter>
         <Routes>
 
-          <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
-          <Route path='/challenge/:id' element={<PostPage />} />
-
+          <Route path='*' element={<Home />} />
 
         </Routes>
       </BrowserRouter>

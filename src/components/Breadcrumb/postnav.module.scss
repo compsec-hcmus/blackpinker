@@ -1,0 +1,32 @@
+@import "../../scss/color.scss";
+
+.breadCrumb {
+    display: flex;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+
+    .item {
+        text-decoration: none;
+        color: $primary;
+
+        &:hover {
+            color: $primary-hover;
+        }
+    }
+
+    .item:last-child {
+        color: $primary;
+        cursor: text;
+    }
+
+    .item {
+        & + .item::before {
+            content: "»";
+            margin: 0 12px;
+        }
+
+        & + .item:hover::before {
+            color: $primary;
+        }
+    }
+}
